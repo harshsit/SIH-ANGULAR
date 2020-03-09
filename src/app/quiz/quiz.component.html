@@ -4,7 +4,7 @@
   <div class="col s8 offset-s2">
     <div
       class="card blue-grey darken-1"
-      *ngFor="let question of data.Question_list"
+      *ngFor="let question of data.Question_list; let j = index"
     >
       <div class="card_content white_text">
         <span class="card-title">#Q</span>
@@ -18,6 +18,7 @@
                 <input
                   type="radio"
                   class="filled-in"
+                  name="answer + {{j}}"
                   (click)="Answer(answer.Weightage, answer.from_Domain)"
                 />
                 <span>{{ answer.Answer_text }}</span>
